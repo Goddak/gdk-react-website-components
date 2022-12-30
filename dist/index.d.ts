@@ -1,3 +1,49 @@
-import ResponsiveHeader, { ExampleResponsiveHeaderConfig, ExampleResponsiveHeaderMenuItems, ExampleResponsiveHeaderProps, MenuConfiguration, MenuItem, ResponsiveHeaderProps } from "./components/ResponsiveHeader/ResponsiveHeader";
-import ResponsiveHero, { ExampleResponsiveHeroCtaConfig, ExampleResponsiveHeroHeadingConfig, ExampleResponsiveHeroProps, ExampleResponsiveHeroTextConfig, ResponsiveHeroCtaConfig, ResponsiveHeroHeadingConfig, ResponsiveHeroProps, ResponsiveHeroTextConfig } from "./components/ResponsiveHero/ResponsiveHero";
-export { ResponsiveHeader, ExampleResponsiveHeaderConfig, ExampleResponsiveHeaderMenuItems, ExampleResponsiveHeaderProps, type MenuConfiguration, type MenuItem, type ResponsiveHeaderProps, ResponsiveHero, ExampleResponsiveHeroCtaConfig, ExampleResponsiveHeroHeadingConfig, ExampleResponsiveHeroProps, ExampleResponsiveHeroTextConfig, type ResponsiveHeroCtaConfig, type ResponsiveHeroHeadingConfig, type ResponsiveHeroProps, type ResponsiveHeroTextConfig };
+import React from 'react';
+
+type MenuItem = {
+    label: string;
+    key: string;
+    url?: string;
+    target?: string;
+};
+type MenuConfiguration = {
+    menuStyles?: React.CSSProperties;
+    itemStyles?: React.CSSProperties;
+    dropdownItemStyles?: React.CSSProperties;
+    logo?: {
+        text?: string;
+        url?: string;
+        logoStyles?: React.CSSProperties;
+    };
+};
+type ResponsiveHeaderProps = {
+    config?: MenuConfiguration;
+    menuItems?: MenuItem[];
+};
+declare const ResponsiveHeader: React.FC<ResponsiveHeaderProps>;
+
+type ResponsiveHeroHeadingConfig = {
+    text: string;
+    style?: React.CSSProperties;
+    classList?: string;
+};
+type ResponsiveHeroTextConfig = {
+    paragraphs: string[];
+    style?: React.CSSProperties;
+    classList?: string;
+};
+type ResponsiveHeroCtaConfig = {
+    label: string;
+    style?: React.CSSProperties;
+    classList?: string;
+    onClick: React.MouseEventHandler<HTMLButtonElement>;
+};
+type ResponsiveHeroProps = {
+    bgStyles?: React.CSSProperties;
+    headingConfig?: ResponsiveHeroHeadingConfig;
+    textConfig?: ResponsiveHeroTextConfig;
+    ctaConfig?: ResponsiveHeroCtaConfig[];
+};
+declare const ResponsiveHero: React.FC<ResponsiveHeroProps>;
+
+export { ResponsiveHeader, ResponsiveHero };
