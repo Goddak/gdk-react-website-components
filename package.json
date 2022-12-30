@@ -1,7 +1,7 @@
 {
   "name": "gdk-react-website-components",
   "description": "This NPM package is a collection of responsive react components designed to speed the development and prototyping of websites.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": false,
   "author": "Kris \"Goddak\" Goddard",
   "keywords": [
