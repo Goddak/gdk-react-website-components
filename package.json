@@ -1,8 +1,20 @@
 {
-  "name": "react-components",
-  "version": "0.1.0",
-  "private": true,
+  "name": "gdk-react-website-components",
+  "description": "This NPM package is a collection of responsive react components designed to speed the development and prototyping of websites.",
+  "version": "1.1.0",
+  "private": false,
+  "author": "Kris \"Goddak\" Goddard",
+  "keywords": ["react", "components", "ui"],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [ "dist", "README.md" ],
+  "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Goddak/gdk-react-website-components.git"
+  },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@tailwindcss/container-queries": "^0.1.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -19,7 +31,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -42,6 +54,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4"
