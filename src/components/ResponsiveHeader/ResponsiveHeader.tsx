@@ -35,7 +35,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ config, menuItems }
 			if (config.logo.text) {
 				return <h3 className="text-2xl font-bold" style={config.logo.logoStyles ? config.logo.logoStyles : {}}>{config.logo.text}</h3>
 			} else if (config.logo.url) {
-				return <img className="max-w-64 max-h-24" src={config.logo.url} style={config.logo.logoStyles ? config.logo.logoStyles : {}} crossOrigin="anonymous" alt='logo'/>
+				return <img className="max-w-64 max-h-24" src={config.logo.url} style={config.logo.logoStyles ? config.logo.logoStyles : {}} crossOrigin="anonymous" alt='logo' />
 			} else {
 				return <></>
 			}
@@ -54,14 +54,14 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ config, menuItems }
 				))}
 			</div>
 				<div className="@4xl:hidden">
-						<div id="nav-icon2" className={'relative h-10 w-12 cursor-pointer ' + (menuVisibilityState ? 'open' : 'closed')} onClick={toggleMenuVisibility}>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
+					<div id="nav-icon2" className={'relative h-10 w-12 cursor-pointer ' + (menuVisibilityState ? 'open' : 'closed')} onClick={toggleMenuVisibility}>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
 					{/* <button className="px-3 py-2 font-bold" onClick={toggleMenuVisibility}>
 					</button> */}
 					<div className='w-full absolute left-0 top-full opacity-0' style={menuVisibilityState ? { opacity: "1" } : { transitionDelay: "1000ms" }}>
@@ -81,11 +81,9 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ config, menuItems }
 
 	return (
 		<div className='w-full z-50' style={config?.menuStyles}>
-			<div className='@container' >
-				<div className=" flex items-center justify-between w-full p-4 @4xl:px-16">
-					{generateLogo()}
-					{generateMenu()}
-				</div>
+			<div className=" flex items-center justify-between w-full p-4 @4xl:px-16">
+				{generateLogo()}
+				{generateMenu()}
 			</div>
 		</div>
 	);
