@@ -1,1 +1,1 @@
-export { default } from './ResponsiveHero'
+export { default, ResponsiveHeroProps, ExampleResponsiveHeroProps } from './ResponsiveHero'

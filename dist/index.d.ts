@@ -21,6 +21,7 @@ type ResponsiveHeaderProps = {
     menuItems?: MenuItem[];
 };
 declare const ResponsiveHeader: React.FC<ResponsiveHeaderProps>;
+declare const ExampleResponsiveHeaderProps: ResponsiveHeaderProps;
 
 type ResponsiveHeroHeadingConfig = {
     text: string;
@@ -44,6 +45,7 @@ type ResponsiveHeroProps = {
     textConfig?: ResponsiveHeroTextConfig;
     ctaConfig?: ResponsiveHeroCtaConfig[];
 };
+declare const ExampleResponsiveHeroProps: ResponsiveHeroProps;
 declare const ResponsiveHero: React.FC<ResponsiveHeroProps>;
 
-export { ResponsiveHeader, ResponsiveHero };
+export { ExampleResponsiveHeaderProps, ExampleResponsiveHeroProps, ResponsiveHeader, ResponsiveHeaderProps, ResponsiveHero, ResponsiveHeroProps };

@@ -1,1 +1,1 @@
-export { default } from './ResponsiveHeader'
+export { default, ResponsiveHeaderProps, ExampleResponsiveHeaderProps } from './ResponsiveHeader'
