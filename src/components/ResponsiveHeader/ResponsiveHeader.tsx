@@ -54,7 +54,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ config, menuItems }
 				))}
 			</div>
 				<div className="@4xl:hidden">
-					<div id="nav-icon2" className={'relative h-10 w-12 cursor-pointer ' + (menuVisibilityState ? 'open' : 'closed')} onClick={toggleMenuVisibility}>
+					<div id="nav-icon2" className={'relative h-6 w-8 cursor-pointer ' + (menuVisibilityState ? 'open' : 'closed')} onClick={toggleMenuVisibility}>
 						<span></span>
 						<span></span>
 						<span></span>
