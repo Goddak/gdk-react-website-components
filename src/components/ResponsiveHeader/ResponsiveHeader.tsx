@@ -35,7 +35,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ config, menuItems }
 			if (config.logo.text) {
 				return <h3 className="text-2xl font-bold" style={config.logo.logoStyles ? config.logo.logoStyles : {}}>{config.logo.text}</h3>
 			} else if (config.logo.url) {
-				return <img className="max-w-64 max-h-24" src={config.logo.url} style={config.logo.logoStyles ? config.logo.logoStyles : {}} crossOrigin="anonymous" alt='logo' />
+				return <img className="max-w-64 max-h-12" src={config.logo.url} style={config.logo.logoStyles ? config.logo.logoStyles : {}} crossOrigin="anonymous" alt='logo' />
 			} else {
 				return <></>
 			}
@@ -46,7 +46,7 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ config, menuItems }
 
 	const generateMenu: () => JSX.Element = () => {
 		if (menuItems) {
-			return <><div className="hidden @4xl:flex @4xl:w-2/3 @4xl:justify-end @4xl:h-24 @4xl:items-center">
+			return <><div className="hidden @4xl:flex @4xl:w-2/3 @4xl:justify-end @4xl:h-12 @4xl:items-center">
 				{menuItems.map((item) => (
 					<a key={item.key} href={item.url} className="px-8 py-2 flex justify-center items-center mr-4 last-of-type:mr-0 font-bold hover:animate-ping" style={config?.itemStyles}>
 						{item.label}
@@ -62,8 +62,6 @@ const ResponsiveHeader: React.FC<ResponsiveHeaderProps> = ({ config, menuItems }
 						<span></span>
 						<span></span>
 					</div>
-					{/* <button className="px-3 py-2 font-bold" onClick={toggleMenuVisibility}>
-					</button> */}
 					<div className='w-full absolute left-0 top-full opacity-0' style={menuVisibilityState ? { opacity: "1" } : { transitionDelay: "1000ms" }}>
 						<ul className='flex flex-col'>
 							{menuItems.map((item, i) => (
