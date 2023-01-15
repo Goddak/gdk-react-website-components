@@ -1,5 +1,5 @@
 import React from 'react';
-import './ResponsiveHero.css'
+import './ResponsiveHero.css';
 
 export type ResponsiveHeroHeadingConfig = {
 	text: string;
@@ -54,7 +54,7 @@ export const ExampleResponsiveHeroProps: ResponsiveHeroProps = {
 const ResponsiveHero: React.FC<ResponsiveHeroProps> = ({ bgStyles, headingConfig, textConfig, ctaConfig }) => {
 	const generateHeading: () => JSX.Element = () => {
 		if (headingConfig) {
-			return <h1 className={headingConfig.classList ? headingConfig.classList : 'w-full text-2xl mb-2 @md:w-2/3 @xl:text-5xl @xl:mb-4'} style={headingConfig.style} >{headingConfig.text}</h1>
+			return <h1 className={headingConfig.classList ? headingConfig.classList : 'gdk-hero__heading w-full text-2xl mb-2 @md:w-2/3 @xl:text-5xl @xl:mb-4'} style={headingConfig.style} >{headingConfig.text}</h1>
 		} else {
 			return <></>
 		}
@@ -64,7 +64,7 @@ const ResponsiveHero: React.FC<ResponsiveHeroProps> = ({ bgStyles, headingConfig
 		if (textConfig) {
 			return <div className='flex flex-col @xl:w-4/5'>
 				{textConfig.paragraphs.map((paragraph, i) => (
-								<p key={i} className={textConfig.classList ? textConfig.classList : "mb-4 text-sm @md:text-md last:mb-2 @xl:text-lg" } style={textConfig.style}>
+								<p key={i} className={textConfig.classList ? textConfig.classList : `gdk-hero__text gdk-hero__text--${i} mb-4 text-sm @md:text-md last:mb-2 @xl:text-lg` } style={textConfig.style}>
 									{paragraph}
 								</p>
 							))}
@@ -76,9 +76,9 @@ const ResponsiveHero: React.FC<ResponsiveHeroProps> = ({ bgStyles, headingConfig
 
 	const generateCtas: () => JSX.Element = () => {
 		if (ctaConfig) {
-			return <div className='flex flex-col @md:flex-row'>
+			return <div className='gdk-hero__cta-container flex flex-col @md:flex-row'>
 				{ctaConfig.map((cta, i) => (
-								<button className={cta.classList ? cta.classList : 'rounded-3xl bg-blue-500 text-white py-2 px-10 hover:underline text-sm mb-2 @md:mb-0 @md:mr-4 @md:text-md'} onClick={cta.onClick} style={cta.style}>{cta.label}</button>
+								<button className={cta.classList ? cta.classList : 'gdk-hero__cta-button rounded-3xl bg-blue-500 text-white py-2 px-10 hover:underline text-sm mb-2 @md:mb-0 @md:mr-4 @md:text-md'} onClick={cta.onClick} style={cta.style}>{cta.label}</button>
 							))}
 			</div>
 		} else {
@@ -88,10 +88,10 @@ const ResponsiveHero: React.FC<ResponsiveHeroProps> = ({ bgStyles, headingConfig
 
 	return (
 		<div
-			className={`@container w-full h-screen bg-center bg-cover`}
+			className={`gdk-hero @container w-full h-screen bg-center bg-cover z-0`}
 			style={bgStyles}
 		>
-			<div className='h-full flex flex-col items-center justify-center p-4 @md:items-start @md:p-12 @4xl:p-36'>
+			<div className='gdk-hero__container h-full flex flex-col items-center justify-center p-4 @md:items-start @md:p-12 @4xl:p-36'>
 				{generateHeading()}
 				{generateText()}
 				{generateCtas()}

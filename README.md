@@ -8,6 +8,26 @@ To install GDK React Website Components, run the following command:
 
 `npm install gdk-react-website-components`
 
+You will need to have tailwind installed in your project, add the following line to the content array of your  `tailwind.config.js` file:
+
+`"./node_modules/gdk-react-website-components/**/*.{js,jsx,ts,tsx}"`
+
+an example `tailwind.config.js` file for a basic create-react-app might be:
+
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/gdk-react-website-components/**/*.{js,jsx,ts,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
 ## Components
 
 ### ResponsiveHeader
